@@ -1,0 +1,126 @@
+CREATE TABLE bbc_articles (id int8 NOT NULL, title text NULL, url text NULL, content text NULL);
+
+INSERT INTO bbc_articles (id, title, url) VALUES (1, 'The city that makes the most expensive boats in the world', 'http://www.bbc.co.uk/news/business-40681345');
+INSERT INTO bbc_articles (id, title, url) VALUES (2, 'High risk of unprecedented winter downpours - Met Office', 'http://www.bbc.co.uk/news/science-environment-40683302');
+INSERT INTO bbc_articles (id, title, url) VALUES (3, 'How formula milk shaped the modern workplace', 'http://www.bbc.co.uk/news/business-40281403');
+INSERT INTO bbc_articles (id, title, url) VALUES (4, 'Action urged to teach children to swim', 'http://www.bbc.co.uk/news/education-40685881');
+INSERT INTO bbc_articles (id, title, url) VALUES (5, 'TV host\'s race jokes spark Brazil-Korea online war', 'http://www.bbc.co.uk/news/blogs-trending-40672028');
+INSERT INTO bbc_articles (id, title, url) VALUES (6, 'Ryanair warns of airline fares war this summer', 'http://www.bbc.co.uk/news/business-40702493');
+INSERT INTO bbc_articles (id, title, url) VALUES (7, 'I couldn\'t talk about having an eating disorder', 'http://www.bbc.co.uk/news/health-40681195');
+INSERT INTO bbc_articles (id, title, url) VALUES (8, 'England World Cup win - The transformation of womens cricket', 'http://www.bbc.co.uk/sport/cricket/40701196');
+INSERT INTO bbc_articles (id, title, url) VALUES (9, 'Animal v Athlete: Four times man has raced beast', 'http://www.bbc.co.uk/news/world-40680346');
+INSERT INTO bbc_articles (id, title, url) VALUES (10, 'How will I be flying in the future?', 'http://www.bbc.co.uk/guides/z3c4hv4');
+INSERT INTO bbc_articles (id, title, url) VALUES (11, 'Love Jane Austen? Then find out what else you will #LoveToRead', 'http://www.bbc.co.uk/programmes/articles/3W2psCW07B06QwlkWzt2w3W/love-jane-austen-then-find-out-what-else-youll-lovetoread');
+INSERT INTO bbc_articles (id, title, url) VALUES (12, 'How many selfies a day make a psychopath?', 'http://www.bbc.co.uk/guides/zsxgh39');
+INSERT INTO bbc_articles (id, title, url) VALUES (13, 'The incredible science of surfing and waves', 'http://www.bbc.com/earth/story/20170622-the-incredible-science-of-surfing-and-waves');
+INSERT INTO bbc_articles (id, title, url) VALUES (14, 'What not to do in a disaster', 'http://www.bbc.com/future/story/20170711-what-not-to-do-in-a-disaster');
+INSERT INTO bbc_articles (id, title, url) VALUES (15, 'The road that lead to 1000 stories', 'http://www.bbc.com/culture/story/20170710-the-road-that-led-to-1000-stories');
+INSERT INTO bbc_articles (id, title, url) VALUES (16, 'Something is blinding these snakes', 'http://www.bbc.com/earth/story/20170629-something-is-blinding-these-snakes');
+INSERT INTO bbc_articles (id, title, url) VALUES (17, 'Turkey\'s forgotten Georgian kingdom', 'http://www.bbc.com/travel/story/20170710-turkeys-forgotten-georgian-kingdom');
+INSERT INTO bbc_articles (id, title, url) VALUES (18, 'The mysterious origins of Europes oldest language', 'http://www.bbc.com/travel/story/20170719-the-mysterious-origins-of-europes-oldest-language');
+INSERT INTO bbc_articles (id, title, url) VALUES (19, 'Potatoe and pepper bake', 'http://www.bbc.co.uk/food/recipes/potato_and_pepper_bake_76628');
+INSERT INTO bbc_articles (id, title, url) VALUES (20, 'Extra trains for Edinburgh Festival Season', 'http://www.bbc.co.uk/news/uk-scotland-edinburgh-east-fife-40683564');
+INSERT INTO bbc_articles (id, title, url) VALUES (21, 'Crossrail 2: Support by government \'outrageous\' after northern snub', 'http://www.bbc.co.uk/news/uk-england-40708531');
+INSERT INTO bbc_articles (id, title, url) VALUES (22, 'Israel removes flashpoint metal detectors at holy site', 'http://www.bbc.co.uk/news/world-middle-east-40712797');
+INSERT INTO bbc_articles (id, title, url) VALUES (23, 'Sea level fears as Greenland darkens', 'http://www.bbc.co.uk/news/science-environment-40686984');
+INSERT INTO bbc_articles (id, title, url) VALUES (24, 'Plans to ban leaseholds on new-build houses in England', 'http://www.bbc.co.uk/news/business-40711013');
+INSERT INTO bbc_articles (id, title, url) VALUES (25, 'HIV-prevention ring a hit with teen girls', 'http://www.bbc.co.uk/news/health-40715295');
+INSERT INTO bbc_articles (id, title, url) VALUES (26, 'Drugs cocktail \'cut HIV deaths by 27%\'', 'http://www.bbc.co.uk/news/health-40706932');
+INSERT INTO bbc_articles (id, title, url) VALUES (27, 'Adam Peaty sets new world record in 50m breaststroke', 'http://www.bbc.co.uk/sport/swimming/40714957');
+INSERT INTO bbc_articles (id, title, url) VALUES (28, 'Jimmy Choo bought by Michael Kors in £896m deal', 'http://www.bbc.co.uk/news/business-40714083');
+INSERT INTO bbc_articles (id, title, url) VALUES (29, 'Brexit: UK \'overwhelmingly reliant\' on abattoir vets from EU', 'http://www.bbc.co.uk/news/uk-politics-40703369');
+INSERT INTO bbc_articles (id, title, url) VALUES (30, 'Microsoft Paint avoids brush with death', 'http://www.bbc.co.uk/news/technology-40714395');
+INSERT INTO bbc_articles (id, title, url) VALUES (31, 'Will Syria\'s war criminals be let off the hook?', 'http://www.bbc.co.uk/news/world-middle-east-40685359');
+INSERT INTO bbc_articles (id, title, url) VALUES (32, 'Back from the Front: Tracking down WW1 grave markers', 'http://www.bbc.co.uk/news/uk-england-norfolk-40446229');
+INSERT INTO bbc_articles (id, title, url) VALUES (33, 'Jobs for the boys? The top roles women have never had', 'http://www.bbc.co.uk/news/uk-40703746');
+INSERT INTO bbc_articles (id, title, url) VALUES (34, 'Cotswold Wildlife Park shot wolf may have climbed fence', 'http://www.bbc.co.uk/news/uk-england-oxfordshire-40714001');
+INSERT INTO bbc_articles (id, title, url) VALUES (35, 'Refugee children on Lesbos helped to face fear of drowning', 'http://www.bbc.co.uk/news/world-europe-40580529');
+INSERT INTO bbc_articles (id, title, url) VALUES (36, 'Spanish deal to tackle gender-based violence', 'http://www.bbc.co.uk/news/world-europe-40715325');
+INSERT INTO bbc_articles (id, title, url) VALUES (37, 'Adam Peaty retains world 100m breaststroke title & Ben Proud wins gold', 'http://www.bbc.co.uk/sport/swimming/40708360');
+INSERT INTO bbc_articles (id, title, url) VALUES (38, 'Acacia Mining rejects $190bn Tanzanian tax bill', 'http://www.bbc.co.uk/news/business-40714086');
+INSERT INTO bbc_articles (id, title, url) VALUES (39, 'Rise in personal loans dangerous, Bank of England official says', 'http://www.bbc.co.uk/news/business-40712573');
+INSERT INTO bbc_articles (id, title, url) VALUES (40, 'Alphabet profits rocked by EU fine', 'http://www.bbc.co.uk/news/business-40711739');
+
+\set content `cat 1.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=1;
+\set content `cat 2.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=2;
+\set content `cat 3.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=3;
+\set content `cat 4.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=4;
+\set content `cat 5.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=5;
+\set content `cat 6.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=6;
+\set content `cat 7.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=7;
+\set content `cat 8.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=8;
+\set content `cat 9.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=9;
+\set content `cat 10.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=10;
+\set content `cat 11.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=11;
+\set content `cat 12.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=12;
+\set content `cat 13.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=13;
+\set content `cat 14.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=14;
+\set content `cat 15.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=15;
+\set content `cat 16.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=16;
+\set content `cat 17.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=17;
+\set content `cat 18.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=18;
+\set content `cat 19.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=19;
+\set content `cat 20.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=20;
+\set content `cat 21.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=21;
+\set content `cat 22.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=22;
+\set content `cat 23.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=23;
+\set content `cat 24.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=24;
+\set content `cat 25.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=25;
+\set content `cat 26.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=26;
+\set content `cat 27.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=27;
+\set content `cat 28.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=28;
+\set content `cat 29.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=29;
+\set content `cat 30.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=30;
+\set content `cat 31.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=31;
+\set content `cat 32.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=32;
+\set content `cat 33.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=33;
+\set content `cat 34.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=34;
+\set content `cat 35.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=35;
+\set content `cat 36.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=36;
+\set content `cat 37.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=37;
+\set content `cat 38.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=38;
+\set content `cat 39.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=39;
+\set content `cat 40.txt`
+UPDATE bbc_articles SET content = :'content' WHERE id=40;
+
+
+
