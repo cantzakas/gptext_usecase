@@ -81,7 +81,7 @@ CREATE TABLE bbc_dict AS
 	FROM test.bbc_dict_terms
 	WHERE term IS NOT NULL
 	GROUP BY term;
-
+ 
 #	STEP 06: Create a dictionary composed of words in a sorted text array; these are unique feature terms, based on the dictionary created before.
 #	--------------------------------------------------------------------
 DROP TABLE IF EXISTS bbc_features;
