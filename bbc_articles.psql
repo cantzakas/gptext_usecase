@@ -1,13 +1,16 @@
 DROP TABLE IF EXISTS bbc_articles CASCADE;
+
 CREATE TABLE bbc_articles (
-  id int8 NOT NULL, 
-  title text NULL, 
-  url text NULL,
-  content text NULL)
+	id int8 NOT NULL, 
+	title text NULL, 
+	url text NULL,
+	content text NULL, 
+	labels text[] NULL,
+	tags text[])
 DISTRIBUTED BY (id);
 
 INSERT INTO bbc_articles (id, title, url, label) VALUES
-  (1, 'The city that makes the most expensive boats in the world', 'http://www.bbc.co.uk/news/business-40681345'),
+  (1, 'The city that makes the most expensive boats in the world', 'http://www.bbc.co.uk/news/business-40681345', ),
   (2, 'High risk of unprecedented winter downpours - Met Office', 'http://www.bbc.co.uk/news/science-environment-40683302'),
   (3, 'How formula milk shaped the modern workplace', 'http://www.bbc.co.uk/news/business-40281403'),
   (4, 'Action urged to teach children to swim', 'http://www.bbc.co.uk/news/education-40685881'),
