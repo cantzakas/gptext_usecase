@@ -1,59 +1,5 @@
 SET search_path TO '$user', public, madlib, gptext;
 
-DROP TABLE IF EXISTS bbc_articles CASCADE;
-CREATE TABLE bbc_articles (
-	id int8 NOT NULL, 
-	title text NULL, 
-	url text NULL,
-	content text NULL, 
-	labels text[] NULL,
-	tags text[])
-DISTRIBUTED BY (id);
-
-INSERT INTO bbc_articles (id, title, url, labels) VALUES
-  (1, 'The city that makes the most expensive boats in the world', 'http://www.bbc.co.uk/news/business-40681345', ARRAY['news', 'business']),
-  (2, 'High risk of unprecedented winter downpours - Met Office', 'http://www.bbc.co.uk/news/science-environment-40683302', ARRAY['news', 'science', 'environment']),
-  (3, 'How formula milk shaped the modern workplace', 'http://www.bbc.co.uk/news/business-40281403', ARRAY['news', 'business']),
-  (4, 'Action urged to teach children to swim', 'http://www.bbc.co.uk/news/education-40685881', ARRAY['news', 'education']),
-  (5, 'TV host\'s race jokes spark Brazil-Korea online war', 'http://www.bbc.co.uk/news/blogs-trending-40672028', ARRAY['news', 'blogs', 'trending']),
-  (6, 'Ryanair warns of airline fares war this summer', 'http://www.bbc.co.uk/news/business-40702493', ARRAY['news', 'business']),
-  (7, 'I couldn\'t talk about having an eating disorder', 'http://www.bbc.co.uk/news/health-40681195', ARRAY['news', 'health']),
-  (8, 'England World Cup win - The transformation of womens cricket', 'http://www.bbc.co.uk/sport/cricket/40701196', ARRAY['sport', 'cricket']),
-  (9, 'Animal v Athlete: Four times man has raced beast', 'http://www.bbc.co.uk/news/world-40680346', ARRAY['news', 'world']),
-  (10, 'How will I be flying in the future?', 'http://www.bbc.co.uk/guides/z3c4hv4', ARRAY['guides']),
-  (11, 'Love Jane Austen? Then find out what else you will #LoveToRead', 'http://www.bbc.co.uk/programmes/articles/3W2psCW07B06QwlkWzt2w3W/love-jane-austen-then-find-out-what-else-youll-lovetoread', ARRAY['programs']),
-  (12, 'How many selfies a day make a psychopath?', 'http://www.bbc.co.uk/guides/zsxgh39', ARRAY['guides']),
-  (13, 'The incredible science of surfing and waves', 'http://www.bbc.com/earth/story/20170622-the-incredible-science-of-surfing-and-waves', ARRAY['earth', 'story']),
-  (14, 'What not to do in a disaster', 'http://www.bbc.com/future/story/20170711-what-not-to-do-in-a-disaster', ARRAY['future', 'story']),
-  (15, 'The road that lead to 1000 stories', 'http://www.bbc.com/culture/story/20170710-the-road-that-led-to-1000-stories', ARRAY['culture', 'story']),
-  (16, 'Something is blinding these snakes', 'http://www.bbc.com/earth/story/20170629-something-is-blinding-these-snakes', ARRAY['earth', 'story']),
-  (17, 'Turkey\'s forgotten Georgian kingdom', 'http://www.bbc.com/travel/story/20170710-turkeys-forgotten-georgian-kingdom', ARRAY['travel', 'story']),
-  (18, 'The mysterious origins of Europes oldest language', 'http://www.bbc.com/travel/story/20170719-the-mysterious-origins-of-europes-oldest-language', ARRAY['travel', 'story']),
-  (19, 'Potatoe and pepper bake', 'http://www.bbc.co.uk/food/recipes/potato_and_pepper_bake_76628', ARRAY['food', 'recipes']),
-  (20, 'Extra trains for Edinburgh Festival Season', 'http://www.bbc.co.uk/news/uk-scotland-edinburgh-east-fife-40683564', ARRAY['news', 'scotland']),
-  (21, 'Crossrail 2: Support by government \'outrageous\' after northern snub', 'http://www.bbc.co.uk/news/uk-england-40708531', ARRAY['news', 'england']),
-  (22, 'Israel removes flashpoint metal detectors at holy site', 'http://www.bbc.co.uk/news/world-middle-east-40712797', ARRAY['news', 'world', 'middle-east']),
-  (23, 'Sea level fears as Greenland darkens', 'http://www.bbc.co.uk/news/science-environment-40686984', ARRAY['news', 'science','environment']),
-  (24, 'Plans to ban leaseholds on new-build houses in England', 'http://www.bbc.co.uk/news/business-40711013', ARRAY['news', 'business']),
-  (25, 'HIV-prevention ring a hit with teen girls', 'http://www.bbc.co.uk/news/health-40715295', ARRAY['news', 'health']),
-  (26, 'Drugs cocktail \'cut HIV deaths by 27%\'', 'http://www.bbc.co.uk/news/health-40706932', ARRAY['news', 'health']),
-  (27, 'Adam Peaty sets new world record in 50m breaststroke', 'http://www.bbc.co.uk/sport/swimming/40714957', ARRAY['sport', 'swimming']),
-  (28, 'Jimmy Choo bought by Michael Kors in £896m deal', 'http://www.bbc.co.uk/news/business-40714083', ARRAY['news', 'business']),
-  (29, 'Brexit: UK \'overwhelmingly reliant\' on abattoir vets from EU', 'http://www.bbc.co.uk/news/uk-politics-40703369', ARRAY['news', 'uk', 'politics']),
-  (30, 'Microsoft Paint avoids brush with death', 'http://www.bbc.co.uk/news/technology-40714395', ARRAY['news', 'technology']),
-  (31, 'Will Syria\'s war criminals be let off the hook?', 'http://www.bbc.co.uk/news/world-middle-east-40685359', ARRAY['news', 'world', 'middle-east']),
-  (32, 'Back from the Front: Tracking down WW1 grave markers', 'http://www.bbc.co.uk/news/uk-england-norfolk-40446229', ARRAY['news', 'uk', 'england']),
-  (33, 'Jobs for the boys? The top roles women have never had', 'http://www.bbc.co.uk/news/uk-40703746', ARRAY['news', 'uk']),
-  (34, 'Cotswold Wildlife Park shot wolf may have climbed fence', 'http://www.bbc.co.uk/news/uk-england-oxfordshire-40714001', ARRAY['news', 'uk', 'england']),
-  (35, 'Refugee children on Lesbos helped to face fear of drowning', 'http://www.bbc.co.uk/news/world-europe-40580529', ARRAY['news', 'europe', 'world']),
-  (36, 'Spanish deal to tackle gender-based violence', 'http://www.bbc.co.uk/news/world-europe-40715325', ARRAY['news', 'world', 'europe']),
-  (37, 'Adam Peaty retains world 100m breaststroke title & Ben Proud wins gold', 'http://www.bbc.co.uk/sport/swimming/40708360', ARRAY['news', 'swimming']),
-  (38, 'Acacia Mining rejects $190bn Tanzanian tax bill', 'http://www.bbc.co.uk/news/business-40714086', ARRAY['news', 'business']),
-  (39, 'Rise in personal loans dangerous, Bank of England official says', 'http://www.bbc.co.uk/news/business-40712573', ARRAY['news', 'business']),
-  (40, 'Alphabet profits rocked by EU fine', 'http://www.bbc.co.uk/news/business-40711739', ARRAY['news', 'business']);
-  
-SELECT * FROM bbc_articles ORDER BY id;
-
 /*	--------------------------------------------------------------------
  *	STEP 00: Preprocess - Drop any existing index
  *	--------------------------------------------------------------------
