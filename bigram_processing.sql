@@ -123,6 +123,7 @@ SELECT * FROM results_bigrams_2 ORDER BY doc_id, tf_idf DESC;
 
 SELECT 
 	doc_id,
+	title,
 	tf_idf,
 	term
 FROM (	
@@ -132,6 +133,8 @@ FROM (
 		term,
 		rank() OVER (PARTITION BY doc_id ORDER BY tf_idf DESC)
 	FROM results_bigrams_2
-	WHERE corpus <> 0) foo
-WHERE rank <= 10
+	WHERE corpus <> 0) foo,
+	bbc_articles
+WHERE bbc_articles.id = foo.doc_id
+	AND rank <= 10
 ORDER BY doc_id, rank ASC;
