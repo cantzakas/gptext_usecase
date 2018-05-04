@@ -5,7 +5,7 @@ SET search_path TO '$user', public, madlib, gptext;
  *	--------------------------------------------------------------------
  */
 
-SELECT gptext.drop_index('gptext_demo.public.bbc_articles');
+SELECT gptext.drop_index('gpadmin.public.bbc_articles');
 
 /*	--------------------------------------------------------------------
  *	STEP 01: Create an empty GPText/Sorl index for the articles information table
@@ -41,7 +41,7 @@ SELECT * FROM gptext.create_index('public', 'bbc_articles','id', 'content');
  *	--------------------------------------------------------------------
  */
 
-SELECT * FROM gptext.enable_terms('gptext_demo.public.bbc_articles', 'content');
+SELECT * FROM gptext.enable_terms('gpadmin.public.bbc_articles', 'content');
 
 /*	--------------------------------------------------------------------
  * 	STEP 03: Populate the GPText/Sorl index by indexing data in the articles information table
@@ -56,7 +56,7 @@ SELECT * FROM gptext.enable_terms('gptext_demo.public.bbc_articles', 'content');
  * 	--------------------------------------------------------------------
  */
  
-SELECT * FROM gptext.index(TABLE(SELECT * FROM bbc_articles), 'gptext_demo.public.bbc_articles');
+SELECT * FROM gptext.index(TABLE(SELECT * FROM bbc_articles), 'gpadmin.public.bbc_articles');
 
 /*	--------------------------------------------------------------------
  * 	STEP 04: Finish the index operation
@@ -70,7 +70,7 @@ SELECT * FROM gptext.index(TABLE(SELECT * FROM bbc_articles), 'gptext_demo.publi
  *	--------------------------------------------------------------------
  */
  
-SELECT * FROM gptext.commit_index('gptext_demo.public.bbc_articles');
+SELECT * FROM gptext.commit_index('gpadmin.public.bbc_articles');
 
 /*	--------------------------------------------------------------------
  * 	SHOW SAMPLE SEARCH
@@ -84,10 +84,10 @@ FROM bbc_articles artcl1, (
 	SELECT * 
 	FROM gptext.search(
     	TABLE(select * from bbc_articles),
-    	'gptext_demo.public.bbc_articles',
+    	'gpadmin.public.bbc_articles',
 	'swimming',
 	null)) artcl2
-WHERE artcl1.id = artcl2.id
+WHERE artcl1.id::integer = artcl2.id::integer
 ORDER BY score DESC;
 
 /*	--------------------------------------------------------------------
@@ -118,7 +118,7 @@ CREATE TABLE documents AS
 		array_upper(positions, 1) as doc_term_count
 	FROM gptext.terms(
 		TABLE(SELECT content FROM bbc_articles), 
-		'gptext_demo.public.bbc_articles', 
+		'gpadmin.public.bbc_articles', 
 		'content', 
 		'*:*', 
 		null)
